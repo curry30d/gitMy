@@ -14,15 +14,15 @@ class PublicController extends Controller
 	public function check(Request $request){
        //开始自动验证
 
-		// $this->validate($request,[
-  //          //验证规则 需要验证的字段名   => '验证规则1'|'验证规则2'|'验证规则3'......		
-		//    //必填,长度介于2-20
-		//    'username'  =>  'required|min:2|max:20',
-		//    //密码,必填,长度6位  
-		//    'password'  =>  'required|min:6',
-  //          //验证码，必填，长度等于5，必须是合法的验证码
-  //          'captcha'   =>  'required|size：5|captcha'
-  //       ]);
+		 // $this->validate($request,[
+   //          //验证规则 需要验证的字段名   => '验证规则1'|'验证规则2'|'验证规则3'......		
+		 //    //必填,长度介于2-20
+		 //    'username'  =>  'required|min:2|max:20',
+		 //    //密码,必填,长度6位  
+		 //    'password'  =>  'required|min:6',
+   //         //验证码，必填，长度等于5，必须是合法的验证码
+   //         'captcha'   =>  'required|size：5|captcha'
+   //       ]);
         $data=$request->only(['username','password']);
         $data['status']='2';//状态为启用用户
         $result=Auth::guard('admin')->attempt($data,$request->get('online'));
